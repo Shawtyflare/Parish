@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="Sunset Cross.jpeg" />
+    <meta charset="UTF-8" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="gallery.css">
+
+    <title>Gallery</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Parish_life.html">Parish Life</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Liturgy.html">Liturgy</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p>Here, we have the images and videos of events, activities, and pictures of the Kajiado parish and its outposts.</p>
+    <div>
+        <label for="room-type">Choose an outpost or event:</label>
+        <select id="room-type">
+            <option value="">Select an outpost or event</option>
+            <option value="Parish Images">Parish Images</option>
+            <option value="Event Images">Event Images</option>
+            <option value="Activity Images">Activity Images</option>
+        </select>
+    </div>
+    <div id="room-images"></div>
+    <script>
+        const roomTypeSelect = document.querySelector('#room-type');
+        const roomImagesDiv = document.querySelector('#room-images');
+
+        roomTypeSelect.addEventListener('change', () => {
+            const selectedValue = roomTypeSelect.value;
+            let imagesHTML = '';
+
+            if (selectedValue === 'Parish Images') {
+                imagesHTML = `
+                    <figure>
+                        <img src="Images/_DSC7216.png" alt="Parish Image 1">
+                        <figcaption>Parish Image 1</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7217.png" alt="Parish Image 2">
+                        <figcaption>Parish Image 2</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7229.png" alt="Parish Image 3">
+                        <figcaption>Parish Image 3</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7226.png" alt="Parish Image 4">
+                        <figcaption>Parish Image 4</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7250.png" alt="Parish Image 5">
+                        <figcaption>Parish Image 5</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7254.png" alt="Parish Image 6">
+                        <figcaption>Parish Image 6</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/_DSC7261.png" alt="Parish Image 7">
+                        <figcaption>Parish Image 7</figcaption>
+                    </figure>
+                `;
+            } else if (selectedValue === 'Event Images') {
+                imagesHTML = `
+                    <figure>
+                        <img src="Images/Event1.jpg" alt="Event Image 1">
+                        <figcaption>Event Image 1</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/Event2.jpg" alt="Event Image 2">
+                        <figcaption>Event Image 2</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/Event3.jpg" alt="Event Image 3">
+                        <figcaption>Event Image 3</figcaption>
+                    </figure>
+                `;
+            } else if (selectedValue === 'Activity Images') {
+                imagesHTML = `
+                    <figure>
+                        <img src="Images/Activity1.jpg" alt="Activity Image 1">
+                        <figcaption>Activity Image 1</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/Activity2.jpg" alt="Activity Image 2">
+                        <figcaption>Activity Image 2</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Images/Activity3.jpg" alt="Activity Image 3">
+                        <figcaption>Activity Image 3</figcaption>
+                    </figure>
+                `;
+            }
+
+            roomImagesDiv.innerHTML = imagesHTML;
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Meshack. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
